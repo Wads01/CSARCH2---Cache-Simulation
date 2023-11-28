@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"Model","l":"Cache"},{"p":"Model","l":"CacheSet"},{"p":"Controller","l":"CacheSim"},{"p":"Model","l":"CacheState"},{"p":"View","l":"MainFrame"},{"p":"Model","l":"Memory"}];updateSearchResults();
