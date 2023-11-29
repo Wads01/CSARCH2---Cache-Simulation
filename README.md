@@ -6,8 +6,10 @@
 ![image](https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/3dd30297-040f-4d6a-8e58-688a6c76d6d2)
 ![image](https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/f1d65994-70fd-4b87-bcba-59bec9fe178c)
 
+### Sequential Sequence
 
+### Random
 
-
+### Mid-Repeat
   
 ## [Demo Video](https://www.youtube.com/watch?v=3pEerq1uPlE)
