@@ -1,4 +1,6 @@
 # CSARCH2---Cache-Simulation
+## [Demo Video](https://www.youtube.com/watch?v=3pEerq1uPlE)
+
 ## Test Cases Input
 
 <p align="center">
@@ -24,8 +26,30 @@
 ![image](https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/f1d65994-70fd-4b87-bcba-59bec9fe178c)
 
 ### Sequential Sequence
-
+```python
+# Simulates a sequential memory access sequence up to 2n cache block and repeats the sequence four times
+    private void sequentialSequence(){
+        int numCacheBlocks = cache.getNumBlocks();
+        int sequenceLength = 2 * numCacheBlocks;
+    
+        for (int reps = 0; reps < 4; reps++){
+            for (int i = 0; i < sequenceLength; i++)
+                memory.toCache(cache, i);
+        }
+    }
+```
 ### Random
+```python
+#  Simulates a random memory access sequence containing 4n blocks
+    private void randomSequence(){
+        Random random = new Random();
+        int numCacheBlocks = 4 * cache.getNumBlocks();
+    
+        for (int i = 0; i < 32 * 4; i++)
+            memory.toCache(cache, random.nextInt(numCacheBlocks));
+    }
+```
+
 After providing all the inputs, we end up with this screen with the details for our Random Sequence Test Case:
 <p align="center">
   <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/98384276/35313679-ad15-49d7-8508-5879cec5989d" />
@@ -92,5 +116,23 @@ Total Memory Access Time = 5438.0ns<br>
 
 
 ### Mid-Repeat
-  
-## [Demo Video](https://www.youtube.com/watch?v=3pEerq1uPlE)
+```python
+# Simulates a memory access sequence with mid-repeat blocks which starts at block 0,
+# then repeat the sequence in the middle two times up to n-1 blocks,
+# after which continue up to 2n
+    private void midRepeatBlocks(){
+        int numCacheBlocks = cache.getNumBlocks();
+        for (int reps = 0; reps < 4; reps++){
+
+            memory.toCache(cache, 0);
+
+            for (int i = 0; i < 2; i++){
+                for (int j = 1; j < numCacheBlocks; j++)
+                    memory.toCache(cache, j);
+            }
+            
+            for (int k = numCacheBlocks; k < numCacheBlocks*2; k++)
+                memory.toCache(cache, k);
+        }
+    }
+```
