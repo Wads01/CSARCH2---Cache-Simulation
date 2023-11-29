@@ -5,25 +5,12 @@
 
 <p align="center">
   <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/15976dbc-8c9c-4e62-abb2-23ac747d170d" />
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/79b676b2-1859-445d-9201-857ddc949c64" />
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/1479e26a-e2ec-4cba-b8b8-4c81e307e080" />
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/bea876e3-72fa-488d-a754-e66a1042da5c" />
 </p
 
-<p align="center">
-  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/5e7b0887-9d26-487e-b25b-ec615e84a5da" />
-</p
 
-<p align="center">
-  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/15976dbc-8c9c-4e62-abb2-23ac747d170d" />
-</p
-
-<p align="center">
-  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/15976dbc-8c9c-4e62-abb2-23ac747d170d" />
-</p
- 
-
-
-![image](https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/37cdce57-0551-444d-8847-996317f1bdf0)
-![image](https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/3dd30297-040f-4d6a-8e58-688a6c76d6d2)
-![image](https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/f1d65994-70fd-4b87-bcba-59bec9fe178c)
 
 ### Sequential Sequence
 ```python
@@ -38,6 +25,67 @@
         }
     }
 ```
+
+When the cache is empty, it is represented by the value -1. Because 0%4 equals 0, we can write the value to set 0. Furthermore, if the stack is empty, the item will be stored at the lowest available cache block. It's worth noting that when the cache is full, we must replace an old value with the new value we want to save. To identify which cache index to employ, a replacement algorithm is required.
+
+<p align="center">
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/bbdceac7-8c60-4ddb-bce5-a0c52d690b9c" />
+</p
+
+In case that the cache is full, we will use the random replacement algorithm.
+```
+ public void replace(int data, int randomIndex){
+        blocks[randomIndex] = data;
+    }
+```
+
+<p align="center">
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/b7b62a46-3545-4732-952a-22413390e3e9" />
+</p
+
+Based on the output of the random algorithm, the data value is placed in cache block 7, which belongs to the set of 32%4=0. 
+
+<p align="center">
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/b86ad3c1-900a-49a6-8276-530b4954373b" />
+</p
+
+In instances where the replacement value generated at random fails to match the index of the cache hit, the corresponding block value remains unaltered. Instead, the system proceeds to execute a read operation from the cache memory.
+
+<p align="center">
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/9e27f5af-3bc5-4d50-80a9-4da56c015c8c" />
+</p
+
+This is the final output of the 8-way (Random Replacement algorithm) - Sequential Sequence
+
+<p align="center">
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/43bf8ecf-2892-407f-b98e-edf074298dd6" />
+</p
+
+Then we also print out our final cache details:<br>
+Total Access Count = 256; Since our number of cache blocks is 32 and the Random sequence is 4x64 blocks.<be>
+
+Cache Hits = 45<br>
+
+Cache Misses = 211<br>
+
+Miss Penalty = 52ns; Since our block size was 5 words. And the formula is (1+(blocksize*10)+1)<br>
+
+Average Memory Access Time = 44.62ns<br>
+>; We get this by first calculating our hit rate and our miss rate. Which is 45/256 and 211/256 respectively.<br>
+>; cacheAccessTime is 10 and missPenalty is 52ns as calculated before.<br>
+>; And then we use the formula: hitRate x cacheAccessTime + missRate x missPenalty<br>
+>; ((45/256) x 10 + (211/256) x 52) = 44.62ns<br>
+
+Total Memory Access Time = 11422.0ns<br>
+>; We use the formula: cacheHits x cacheAccessTime + cacheMisses x missPenalty<br>
+>; cacheAccessTime is 10 and missPenalty is 52ns as calculated before.<br>
+>; (45 x 10 + 211 x 52) = 5438.0ns<br>
+ <p align="center">
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/130729389/d6f263e0-f426-4d5e-ae89-e9fcc554275e" />
+</p>
+
+
+
 ### Random
 ```python
 #  Simulates a random memory access sequence containing 4n blocks
