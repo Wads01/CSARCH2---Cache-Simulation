@@ -184,3 +184,64 @@ Total Memory Access Time = 5438.0ns<br>
         }
     }
 ```
+After providing the input for the test case, we then get this screen including the details for our Mid Repeat Test Cases:
+
+<p align="center">
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/106811460/1735b098-ca08-40e3-8a9b-435e169d213b" />
+</p>
+
+For this test case, we will start at block 0, then it will repeat the sequence in the middle 2 times until n-1 blocks, which will continue on to 2n. This sequence will then be repeated for 4 times. We then proceed to fill up the first set, starting at (0). Modulo it by 4 which will give us 0. We will put this in Set 0 and in index 1. We then update the cache misses and total memory access time.
+
+<p align="center">
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/106811460/e6dce526-962d-4502-975f-13fb0ce06c67" />
+</p>
+
+The sequence will continue from (0) to (31) where we modulo it again by 4 to determine its designated set which will get us 3 then we will put it in Set 3 and in Index 8. Update the Cache Miss and total memory access time.
+
+<p align="center">
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/106811460/fc8c713b-f068-4ad6-83cf-758f5163077d" />
+</p>
+
+Since this test case is a mid-repeat sequence, we will then go back to (1) to repeat the middle sequence for the second time until n-1 blocks. Modulo by 4 we get 1 so we will put it in Set 1 and since 1 exists in the Set, we will just update the Cache Hit and the total memory access time.
+
+<p align="center">
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/106811460/1d2c9973-f4e3-4f82-9bc8-fde84dd029c8" />
+</p>
+
+After repeating the sequence in the middle for the second time, we will then proceed to (32) until (63). We modulo (32) by 4 to get the set location and we will get 0. We now put it in Set 0 and we will replace 24 in index 7 with (32). We then update the Cache Miss and total memory access time.
+
+<p align="center">
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/106811460/f0a9656f-99b4-42ad-a3d0-6472944f0e87" />
+</p>
+
+### Final Result of the Cache Memory View for Mid Repeat Test Case
+After the replacement algorithm reaches 2n, the sequence will be repeated 4 times and it will come to a point where we will get the following final cache values:
+
+<p align="center">
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/106811460/519b2cf9-83a6-4a11-87f8-e916ae995d8c" />
+</p>
+
+### The final cache details would be:
+
+Total Access Count = 380<br>
+
+Cache Hits = 110<br>
+
+Cache Misses = 270<br>
+
+Miss Penalty = 52ns<br>
+
+Average Memory Access Time = 39.84ns<br>
+>; We get this by first calculating our hit rate and our miss rate. Which is 110/380 and 270/380 respectively.<br>
+>; cacheAccessTime is 10 and missPenalty is 52ns as calculated before.<br>
+>; And then we use the formula: hitRate x cacheAccessTime + missRate x missPenalty<br>
+>; ((110/380) x 10 + (270/380) x 52) = 39.84ns<br>
+
+Total Memory Access Time = 15140.0ns<br>
+>; We use the formula: cacheHits x cacheAccessTime + cacheMisses x missPenalty<br>
+>; cacheAccessTime is 10 and missPenalty is 52ns as calculated before.<br>
+>; (110 x 10 + 270 x 52) = 15140.0ns<br>
+
+<p align="center">
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/106811460/b59e9153-82e3-458c-b1f4-56df6a46fec1" />
+</p>
