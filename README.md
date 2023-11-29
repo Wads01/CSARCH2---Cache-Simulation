@@ -105,7 +105,7 @@ After providing all the inputs, we end up with this screen with the details for 
 
 Since this test case has a random sequence containing 4*32 blocks, there is no telling what number comes next. Also, we will fill out the set first, before using our random replacement algorithm. Empty cache blocks are denoted by -1. For our first one here, we have (111), when we modulo it by 4, we get 3. So we put it at Set 3 and at cache block 0. Update the cache misses and the total memory access time.
 <p align="center">
-  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/98384276/843032ff-55a0-46d5-975e-95ac2e400ad7" />
+  <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/98384276/c60ff147-5c75-4859-a7b7-6f48ac748902" />
 </p>
 
 Next we get (42), when we modulo it by 4, we get 2. So we put it at Set 2 and at cache block 0. Update the cache misses and the total memory access time.
