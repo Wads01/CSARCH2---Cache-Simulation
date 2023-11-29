@@ -103,17 +103,17 @@ After providing all the inputs, we end up with this screen with the details for 
   <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/98384276/35313679-ad15-49d7-8508-5879cec5989d" />
 </p>
 
-Since this test case has a random sequence containing 4*32 blocks, there is no telling what number comes next. Also, we will fill out the set first, before using our random replacement algorithm. For our first one here, we have (111), when we modulo it by 4, we get 3. So we put it at Set 3 and at index 1. Update the cache misses and the total memory access time.
+Since this test case has a random sequence containing 4*32 blocks, there is no telling what number comes next. Also, we will fill out the set first, before using our random replacement algorithm. Empty cache blocks are denoted by -1. For our first one here, we have (111), when we modulo it by 4, we get 3. So we put it at Set 3 and at cache block 0. Update the cache misses and the total memory access time.
 <p align="center">
   <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/98384276/e683ce09-ca4d-4de9-b996-66db1ad4d075" />
 </p>
 
-Next we get (42), when we modulo it by 4, we get 2. So we put it at Set 2 and at index 1. Update the cache misses and the total memory access time.
+Next we get (42), when we modulo it by 4, we get 2. So we put it at Set 2 and at cache block 0. Update the cache misses and the total memory access time.
 <p align="center">
   <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/98384276/0986844c-249e-4dfd-ad28-c6ade4463061" />
 </p>
 
-So we keep doing this until the set where the next value is going to be placed is already full which will cause us to use our random replacement algorithm. In this next one, we encounter our first cache hit. We can see here that in Set 1, (125) is at index 1. 
+So we keep doing this until the set where the next value is going to be placed is already full which will cause us to use our random replacement algorithm. In this next one, we encounter our first cache hit. We can see here that in Set 1, (125) is at cache block 1 1. 
 <p align="center">
   <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/98384276/0da95e6d-b55f-4401-84af-a1f91028b4b0" />
 </p>
@@ -128,7 +128,7 @@ We then encounter our first instance wherein we will use our replacement algorit
   <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/98384276/f77e7075-55ed-49e8-b313-28e266dc1b81" />
 </p>
 
-So we use the replacement algorithm, in which it returned 1. So we replaced (6) and put (2) now at index 1. Update the cache misses and the total memory access time.
+So we use the replacement algorithm, in which it returned 1. So we replaced (6) and put (2) now at cache block 1. Update the cache misses and the total memory access time.
 <p align="center">
   <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/98384276/320472a5-3819-475e-bb5d-4fec343dcda8" />
 </p>
