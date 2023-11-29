@@ -51,19 +51,24 @@ We then reach a point where the replacement algorithm is now used every time sin
 
 
 Then we also print out our final cache details:<br>
-Total Access Count = 128; Since our number of cache blocks is 32 and the Random sequence is 4x32 blocks.<br>
+Total Access Count = 128; Since our number of cache blocks is 32 and the Random sequence is 4x32 blocks.<be>
+
 Cache Hits = 29<br>
+
 Cache Misses = 99<br>
+
 Miss Penalty = 52ns; Since our block size was 5 words. And the formula is (1+(blocksize*10)+1)<br>
+
 Average Memory Access Time = 42.48ns<br>
-; We get this by first calculating our hit rate and our miss rate. Which is 29/128 and 99/128 respectively.<br>
-;cacheAccessTime is 10 and missPenalty is 52ns as calculated before.<br>
-; And then we use the formula: hitRate x cacheAccessTime + missRate x missPenalty<br>
-; ((29/128) x 10 + (99/128) x 52) = 42.48ns<br>
+>; We get this by first calculating our hit rate and our miss rate. Which is 29/128 and 99/128 respectively.<br>
+>; cacheAccessTime is 10 and missPenalty is 52ns as calculated before.<br>
+>; And then we use the formula: hitRate x cacheAccessTime + missRate x missPenalty<br>
+>; ((29/128) x 10 + (99/128) x 52) = 42.48ns<br>
+
 Total Memory Access Time = 5438.0ns<br>
-	; We use the formula: cacheHits x cacheAccessTime + cacheMisses x missPenalty<br>
-	; cacheAccessTime is 10 and missPenalty is 52ns as calculated before.<br>
-	; (29 x 10 + 99 x 52) = 5438.0ns<br>
+>; We use the formula: cacheHits x cacheAccessTime + cacheMisses x missPenalty<br>
+>; cacheAccessTime is 10 and missPenalty is 52ns as calculated before.<br>
+>; (29 x 10 + 99 x 52) = 5438.0ns<br>
  <p align="center">
   <img src="https://github.com/Wads01/CSARCH2---Cache-Simulation/assets/98384276/6d2647c7-73e6-4901-8b00-543f2d4854b1" />
 </p>
